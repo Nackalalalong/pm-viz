@@ -20,16 +20,16 @@ const MapBox = () => {
 
   const markers = pinCoors.map( arr => (
     <Marker
-      longitude={arr[1]}
-      latitude={arr[0]}>
+    coordinates={[arr[1], arr[0]]}>
       <div className="marker"><span></span></div>
     </Marker>
   ))
 
   const popups = pinCoors.map(arr => (
     <Popup
-    latitude={arr[0]}
-    longitude={arr[1]}
+    coordinates={[arr[1], arr[0]]}
+    // latitude={arr[0]}
+    // longitude={arr[1]}
     // onClose={closePopup}
     closeButton={true}
     closeOnClick={false}
@@ -39,24 +39,24 @@ const MapBox = () => {
   </Popup>
   ))
 
-  return (
-    <h1>kuy</h1>
-  )
-
   // return (
-  //   <Map
-  //     style="mapbox://styles/mapbox/dark-v10"
-  //     center={[100.5316,13.7386]}
-  //     zoom={[5]}
-  //     containerStyle={{
-  //       height: '100vh',
-  //       width: '100vw'
-  //     }}
-  //   >
-  //     {markers}
-  //     {popups}
-  //   </Map>
-  // );
+  //   <h1>kuy</h1>
+  // )
+
+  return (
+    <Map
+      style="mapbox://styles/mapbox/dark-v10"
+      center={[100.5316,13.7386]}
+      zoom={[5]}
+      containerStyle={{
+        height: '100vh',
+        width: '100vw'
+      }}
+    >
+      {/* {markers} */}
+      {popups}
+    </Map>
+  );
 
 }
 
