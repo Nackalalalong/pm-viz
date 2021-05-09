@@ -1,0 +1,19 @@
+.slider-holder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+}
+
+.rc-slider-handle {
+    width: 30px;
+    height: 30px;
+    margin-top: -14px;
+}
