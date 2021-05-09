@@ -1,12 +1,18 @@
 import React, { useState } from 'react'
-import ReactMapboxGl, { Marker, Popup } from 'react-mapbox-gl';
+import ReactMapboxGl, { Marker, Popup, GeoJSONLayer } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import province from './mapSegment'
 
 const MapBox = () => {
   const Map = ReactMapboxGl({
     accessToken:
       "pk.eyJ1IjoicGV3dDE0MDMiLCJhIjoiY2tqeTFjYTZkMDlpdTJvcGgxOXVzdG05aSJ9.KLyvIrr_3X4ETvkFdYzE0g"
   });
+
+const polygonPaint = {
+    'fill-color': "#ff0000",
+    'fill-opacity': 0.3
+}
 
   const [popupOpens,setPopupOpens] = useState([false,false,false,false,false,false])
 
@@ -39,11 +45,13 @@ const MapBox = () => {
   </Popup>
   ))
 
+
   // return (
   //   <h1>kuy</h1>
   // )
 
   return (
+    <>
     <Map
       style="mapbox://styles/mapbox/dark-v10"
       center={[100.5316,13.7386]}
@@ -53,9 +61,12 @@ const MapBox = () => {
         width: '100vw'
       }}
     >
-      {/* {markers} */}
+      {markers}
       {popups}
+      <GeoJSONLayer fillPaint={polygonPaint} data={province}/>
     </Map>
+    
+    </>
   );
 
 }
