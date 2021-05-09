@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import ReactMapboxGl, { Marker, Popup } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import Slider, { Range } from 'rc-slider';
+import 'rc-slider/assets/index.css';
 
 const MapBox = () => {
   const Map = ReactMapboxGl({
@@ -8,7 +10,9 @@ const MapBox = () => {
       "pk.eyJ1IjoicGV3dDE0MDMiLCJhIjoiY2tqeTFjYTZkMDlpdTJvcGgxOXVzdG05aSJ9.KLyvIrr_3X4ETvkFdYzE0g"
   });
 
-  const [popupOpens,setPopupOpens] = useState([false,false,false,false,false,false])
+  const [popupData,setPopupData] = useState([
+    "test","test","test","test","test","test"
+  ])
 
   const pinCoors = [ // lat long
     [12.60961, 102.10447], // chanthaburi
@@ -20,8 +24,9 @@ const MapBox = () => {
 
   const markers = pinCoors.map( arr => (
     <Marker
-    coordinates={[arr[1], arr[0]]}>
-      <div className="marker"><span></span></div>
+    coordinates={[arr[1], arr[0]]}s
+    >
+      <div className="marker">asd</div>
     </Marker>
   ))
 
@@ -44,6 +49,7 @@ const MapBox = () => {
   // )
 
   return (
+    <>
     <Map
       style="mapbox://styles/mapbox/dark-v10"
       center={[100.5316,13.7386]}
@@ -56,6 +62,9 @@ const MapBox = () => {
       {/* {markers} */}
       {popups}
     </Map>
+    <Slider />
+    <Range />
+    </>
   );
 
 }
