@@ -4,6 +4,7 @@ import './map.css'
 import { Popup } from 'react-mapbox-gl'
 import { coordinates } from './data'
 import useWindowDimensions from './UseWindowDimensions'
+import predicted from './predicted'
 
 const SliderPopups = (props) => {
 
@@ -28,7 +29,7 @@ const SliderPopups = (props) => {
     });
   }
 
-  const popups = Object.keys(coordinates).map(province => (
+  const popups = Object.keys(coordinates).map((province,index) => (
     <Popup 
       className="popup-holder"
       coordinates={[coordinates[province][1], coordinates[province][0]]}
@@ -37,7 +38,7 @@ const SliderPopups = (props) => {
       offsetTop={-30}
     >
       <span>{province}</span><br />
-      <span className='pm-text'>{`${sliderVal} AQI`}</span>
+      <span className='pm-text'><strong>{`${predicted[index][sliderVal-1]} `}</strong>AQI</span>
     </Popup>
   ))
 

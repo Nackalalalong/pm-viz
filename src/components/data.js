@@ -116,7 +116,7 @@ export const latlong = [
 
 const coordinates = {}
 provinces.map((province,index) => {
-    coordinates[province.replace("_", " ")] = latlong[index]
+    coordinates[province.replaceAll("_", " ")] = latlong[index]
 })
 
 export  {coordinates};

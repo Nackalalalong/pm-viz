@@ -8,6 +8,7 @@
     "rc-slider": "^9.7.2",
     "react": "^16.11.2",
     "react-dom": "^16.11.2",
+    "react-line-graph": "^1.0.6",
     "react-mapbox-gl": "^5.1.1",
     "react-scripts": "^4.0.3",
     "web-vitals": "^1.1.2"
