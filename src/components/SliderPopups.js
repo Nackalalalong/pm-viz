@@ -36,6 +36,7 @@ const SliderPopups = (props) => {
       <div className="slider-holder">
         <Slider min={1} max={72} onAfterChange={handleAfterChange} defaultValue={sliderVal} marks={marks} />
       </div>
+      <p className="slider-desc-text">next hours to predict</p>
     </>
   )
 }

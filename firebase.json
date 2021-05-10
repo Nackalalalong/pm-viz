@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "target": "pm-viz",
+    "public": "build",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

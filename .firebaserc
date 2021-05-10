@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "memmy-782ae"
+  },
+  "targets": {
+    "memmy-782ae": {
+      "hosting": {
+        "pm-viz": [
+          "pm-viz"
+        ]
+      }
+    }
+  }
+}
