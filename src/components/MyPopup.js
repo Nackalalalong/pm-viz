@@ -13,7 +13,7 @@ const MyPopup = props => {
 
     useEffect(() => {
         setHoverVal(null)
-    }, props.slideVal)
+    }, [props.slideVal])
 
     const handleToggleChart = () => {
         setgraphShow(!isGraphShow)
