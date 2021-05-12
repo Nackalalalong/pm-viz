@@ -30,9 +30,7 @@ const MapBox = () => {
           width: '100vw'
         }}
       >
-        <GeoJSONLayer fillPaint={polygonPaint} data={province} />
         <SliderPopups onSlideChange={handleSlideChange} />
-        <AreaColor/>
       </Map>   
   );
 
