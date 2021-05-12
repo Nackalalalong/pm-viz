@@ -13,7 +13,7 @@ const PopupGroup = forwardRef((props, ref) => {
     
       }));
 
-    const [slideVal, setSlideVal] = useState(1)
+    const [slideVal, setSlideVal] = useState(props.initialSlideVal)
 
     const popups = Object.keys(coordinates).map((province,index) => 
         <MyPopup slideVal={slideVal} coordinate={coordinates[province]} data={predicted[index]} province={province} />

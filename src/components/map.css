@@ -13,6 +13,32 @@
     z-index: 100;
 }
 
+.popups-toggle-holder {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    margin-bottom: 130px;
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.popups-toggle-holder span {
+    margin-left: 15px;
+}
+
+.popups-toggle {
+    cursor: pointer;
+}
+
+.popups-toggle:hover {
+    color: turquoise;
+}
+
 .rc-slider-handle {
     width: 30px;
     height: 30px;
@@ -42,7 +68,7 @@
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    font-size: 16px;
+    font-size: 1rem;
 }
 
 .chart-button {
@@ -51,9 +77,14 @@
     border: 1px solid gray;
     border-radius: 5px;
     cursor: pointer;
+    padding: 0 5px 0 5px;
 }
 
-.chart-button > img {
-    width: 10px;
-    height: 10px;
+.chart-button:hover {
+    color: turquoise;
+}
+
+.chart-button svg {
+    width: 15px;
+    height: 15px;
 }

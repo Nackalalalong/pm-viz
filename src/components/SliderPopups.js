@@ -3,6 +3,7 @@ import React, { useRef, useState } from 'react'
 import './map.css'
 import useWindowDimensions from './UseWindowDimensions'
 import PopupGroup from './PopupGroup'
+import { Visibility, VisibilityOff } from '@material-ui/icons';
 
 const SliderPopups = (props) => {
 
@@ -11,6 +12,7 @@ const SliderPopups = (props) => {
   const [sliderVal, setSlideVal] = useState(1)
   const { height, width } = useWindowDimensions();
   const popupsRef = useRef()
+  const [popupVisible, setPopupVisible] = useState(true)
 
   const marks = {};
   if ( width <= 1600 ){
@@ -29,16 +31,31 @@ const SliderPopups = (props) => {
   }
 
   const handleChange = e => {
-    popupsRef.current.updateVal(e)
+    if (popupsRef.current){
+      popupsRef.current.updateVal(e)
+    }
+  }
+
+  const setPopupsOn = () => {
+    setPopupVisible(true)
+  }
+
+  const setPopupsOff = () => {
+    setPopupVisible(false)
   }
 
   return (
     <>
-      <PopupGroup ref={popupsRef} />
+      {popupVisible && <PopupGroup ref={popupsRef} initialSlideVal={sliderVal} />}
       <div className="slider-holder">
         <SliderWithTooltip min={1} max={72} onChange={handleChange} onAfterChange={handleAfterChange} defaultValue={sliderVal} marks={marks} />
       </div>
-      <p className="slider-desc-text">next hours to predict</p>
+      <span className="slider-desc-text">next hours to predict</span>
+      <div className="popups-toggle-holder">
+        {popupVisible && <Visibility className='popups-toggle' onClick={setPopupsOff} />}
+        {!popupVisible && <VisibilityOff className='popups-toggle' onClick={setPopupsOn} />}
+        <span>toggle popups</span>
+      </div>
     </>
   )
 }
