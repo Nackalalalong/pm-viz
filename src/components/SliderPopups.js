@@ -111,6 +111,7 @@ const SliderPopups = (props) => {
     }
     if ( props.onSlideChange ){
       props.onSlideChange(e)
+      changeAreaColor(e)
     }
   }
 
