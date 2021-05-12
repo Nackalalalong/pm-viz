@@ -34,6 +34,9 @@ const SliderPopups = (props) => {
     if (popupsRef.current){
       popupsRef.current.updateVal(e)
     }
+    if ( props.onSlideChange ){
+      props.onSlideChange(e)
+    }
   }
 
   const setPopupsOn = () => {
