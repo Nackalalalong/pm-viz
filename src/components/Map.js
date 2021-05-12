@@ -16,6 +16,10 @@ const MapBox = () => {
     'fill-opacity': 0.3
   }
 
+  const handleSlideChange = (e) => {
+    console.log(e)
+  }
+
   return (
       <Map
         style="mapbox://styles/mapbox/dark-v10"
@@ -26,8 +30,9 @@ const MapBox = () => {
           width: '100vw'
         }}
       >
+        <GeoJSONLayer fillPaint={polygonPaint} data={province} />
+        <SliderPopups onSlideChange={handleSlideChange} />
         <AreaColor/>
-        <SliderPopups />
       </Map>   
   );
 
