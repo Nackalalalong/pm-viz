@@ -3,7 +3,6 @@ import ReactMapboxGl from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'rc-slider/assets/index.css';
 import SliderPopups from './SliderPopups'
-import AreaColor from './AreaColor'
 
 const MapBox = () => {
   const Map = ReactMapboxGl({
@@ -16,10 +15,6 @@ const MapBox = () => {
     'fill-opacity': 0.3
   }
 
-  const handleSlideChange = (e) => {
-    console.log(e)
-  }
-
   return (
       <Map
         style="mapbox://styles/mapbox/dark-v10"
@@ -30,7 +25,7 @@ const MapBox = () => {
           width: '100vw'
         }}
       >
-        <SliderPopups onSlideChange={handleSlideChange} />
+        <SliderPopups />
       </Map>   
   );
 
