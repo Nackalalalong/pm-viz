@@ -1,9 +1,9 @@
 import React from 'react'
-import ReactMapboxGl, { GeoJSONLayer } from 'react-mapbox-gl';
+import ReactMapboxGl from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import 'rc-slider/assets/index.css';
-import province from './mapSegment'
 import SliderPopups from './SliderPopups'
+import AreaColor from './AreaColor'
 
 const MapBox = () => {
   const Map = ReactMapboxGl({
@@ -32,6 +32,7 @@ const MapBox = () => {
       >
         <GeoJSONLayer fillPaint={polygonPaint} data={province} />
         <SliderPopups onSlideChange={handleSlideChange} />
+        <AreaColor/>
       </Map>   
   );
 
