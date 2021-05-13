@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Popup } from 'react-mapbox-gl'
 import LineGraph from 'react-line-graph'
-import graphIcon from '../images/graph.png'
 import { ShowChart } from '@material-ui/icons'
 
 const MyPopup = props => {
